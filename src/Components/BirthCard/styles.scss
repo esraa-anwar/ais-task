@@ -1,0 +1,54 @@
+.infoIcon:hover {
+    cursor: pointer;
+    fill: pink;
+  }
+.birth-card{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #ffffff;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 54px;
+    border: 1px solid #d9dbdd;
+    .birth-card-content{
+        justify-self: center;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        p{
+            grid-column: 1/-1;
+            color: #1a2036;
+         font-size: 18px;
+         font-weight: 500;   
+        }
+        .female,.male{
+            justify-self: center;
+            display: grid;
+            grid-template-columns: 1fr ;
+            
+          .svg-img1   path{
+            fill: #e85099;
+          
+            // stroke-width: 10px;
+        } .svg-img2   path{
+            fill: #02a0fc;
+          
+            // stroke-width: 10px;
+        }
+        
+            img{
+                justify-self: center;
+                width: 30%;
+                path {
+                    fill: #000;
+                  }
+            }
+            .number{
+                color:  #1a2036;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+}

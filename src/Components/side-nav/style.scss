@@ -1,0 +1,46 @@
+.SideNavbar{
+    padding-top: 2rem;
+    display: grid;
+    background-color: #ffffff;
+    width: 100%;
+    
+    grid-template-columns: 1fr;
+    .SideNavbar-content{
+        justify-self: center;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        /* grid-template-columns: 1fr; */
+        gap: 1rem;
+        .Accordion{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            cursor: pointer;
+            .Accordion-content{
+                justify-self: end;
+            direction: rtl;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .circle{
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                border: 5px solid #03885c;
+            }
+            p{padding: 0;
+            margin: 0;
+            }
+        }}
+        p{
+            text-align: right;
+            color: #000000;
+            font-size: 18px;
+            direction: rtl;
+        }
+        hr{
+            color: #e6edf9;
+            width: 100%;
+        }
+    }
+}

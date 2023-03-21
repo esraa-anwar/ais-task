@@ -1,0 +1,80 @@
+.InputContainer {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  .InputContainer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    justify-self: center;
+    width: 90%;
+    .date-input{
+border: 1px solid #eaeaf0;
+        background-color: #ffffff;
+        border-radius: 24px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        padding-right: 5px;
+        padding-left: 20px;
+        p{
+          font-size: 18px;
+          color: #343150;
+        }
+    }
+    .select-input {
+      display: grid;
+      justify-self: end;
+      grid-template-columns: 1fr;
+      border-radius: 12px;
+      background-color: #ffffff;
+      height: 60px;
+      width: 75%;
+   
+      .select-input-content {
+        justify-self: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        width: 100%;
+        direction: rtl;
+        .select {padding-right: 1rem;
+            // background-color: #e9f2ff;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          p{
+            padding: 0;
+            margin: 0;
+            color: #000000;
+            font-size: 18px;
+          }
+          .dot {
+            background-color: #7d7d94;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
+          .dot1 {
+            background-color: #ffc542;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
+          .dot2 {
+            background-color: #3dd598;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:"992px") {
+  .InputContainer .InputContainer-content {
+   
+    grid-template-columns: 1fr}
+}
