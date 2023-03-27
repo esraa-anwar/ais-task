@@ -1,13 +1,11 @@
-
+import React from 'react';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Home from './Pages/Home/Home';
+import Home from './Pages/Home/Home.tsx';
 
 function App() {
   return (
     <div className="App">
-    <Navbar/>
-<Home/>    
+<Home/>
     </div>
   );
 }
