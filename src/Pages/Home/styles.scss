@@ -119,12 +119,28 @@ font-weight: 600;
   .home .home-content select {
     width: 74%;
   }
+  .home .home-content .header {
+    grid-template-columns: 1fr;
+
+    row-gap: 1rem;
+    .total-content{
+        justify-self: center;
+    }
+}
 }
 @media (min-width: "786px") and (max-width: "992px") {
   .home .home-content {
     width: 85%;
     grid-template-columns: 1fr 1fr;
   }
+  .home .home-content .header {
+    grid-template-columns: 1fr;
+row-gap: 1rem;
+
+.total-content{
+    justify-self: start;
+}
+}
 
   .home .home-content select {
     width: 74%;
