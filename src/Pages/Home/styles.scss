@@ -1,107 +1,135 @@
-.home{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    .home-content{
-        
+.home {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  .home-content {
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
-        justify-self: center;
-        width: 70%;
-        .total{
-            grid-column: 1/-1;
-            font-weight: bold;
-            justify-self: start;
-            font-size: 24px;
-            color: #707070;
-            span{
-                padding-left: 1rem;
-                color: #000;
+    justify-self: center;
+    width: 90%;
+    .header{
+        display: grid;
+        grid-column: 1/-1;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 1px solid #b4b4b4;
+        padding-bottom: 2rem;
+        align-items: center;
+        .radio-btns-content{
+            display: flex;
+            gap: 1.5rem;
+            label{
+                font-size: 24px;
             }
         }
-        select{
-            justify-self: center;
-            border-radius: 12px;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            width: 30%;
-            font-size: 18px;
-            grid-column: 1/-1;
-            height: 45px;
-        }
-.card{
-    height: auto;
-    width: 100%;
-    border-radius: 14px;
-    padding-bottom: 2rem;
-    background-color: #f3f6f9;
-    display: grid;
-    grid-template-columns: 1fr ;
-    img{
+    .total-content {
+      display: flex;
+      gap: 1rem;
+      justify-self: end;
+   
+      align-items: center;
+      .total {
+        font-weight: bold;
+width: 100%;
+color: #fff;
+        font-size: 24px;
+     
+        height: 45px;
+        background-color: #2d7e2f;
+      }
+      span {
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 1rem;
+        color: #93d664;
+      }
+    }
+    select {
+      justify-self: start;
+      border-radius: 12px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      width: 30%;
+      font-size: 18px;
+  
+      height: 45px;
+    }}
+    .card {
+      height: auto;
+      width: 100%;
+      border-radius: 14px;
+      padding-bottom: 2rem;
+      background-color: #f3f6f9;
+      display: grid;
+      grid-template-columns: 1fr;
+      img {
         border-radius: 14px;
 
         height: 150px;
         width: 100%;
-    }
-    .card-content{
+      }
+      .card-content {
         display: grid;
         grid-template-columns: 1fr;
         justify-self: center;
         width: 90%;
-     
-        p{
-            padding: 0;
-            margin: 0;
+.name{
+    text-align: left;
+    font-size: 24px;
+color: #000;
+font-weight: 600;
+}
+        p {
+          padding: 0;
+          margin: 0;
+          font-size: 16px;
+          text-align: left;
+          span {
             font-size: 16px;
-            text-align: left;
-            span{
-                font-size: 16px;
-                color: #707070;
-            }
+            color: #707070;
+          }
         }
+      }
     }
-}
 
-button{
-    background-color: #e9d023;
-  grid-column: 1/-1;
-    justify-self: center;
-    width: 25%;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    height: 45px;
-    border-radius: 14px;
-    cursor: pointer;
-
+    button {
+      background-color: #25a69d;
+      grid-column: 1/-1;
+      justify-self: start;
+      width: 25%;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      height: 45px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
 }
-}}
-@media (min-width:"320px") and (max-width:"786px") {
-    .home .home-content {
-
-        width: 85%;
-        grid-template-columns: 1fr ;
-    button{
-        width: 80%;
+@media (min-width: "320px") and (max-width: "786px") {
+  .home .home-content {
+    width: 85%;
+    grid-template-columns: 1fr;
+    button {
+      width: 80%;
     }
-    }  
-    .home .home-content select {
-   
-        width: 74%;}  
+  }
+  .home .home-content select {
+    width: 74%;
+  }
 }
-@media (min-width:"786px") and (max-width:"992px") {
-    .home .home-content {
-width: 85%;
-        grid-template-columns: 1fr 1fr;
-    }
-        
-    .home .home-content select {
-   
-        width: 74%;}  
-        button{
-            width: 80%;
-        }
-    }
+@media (min-width: "786px") and (max-width: "992px") {
+  .home .home-content {
+    width: 85%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home .home-content select {
+    width: 74%;
+  }
+  button {
+    width: 80%;
+  }
+}

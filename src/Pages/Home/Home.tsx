@@ -4,24 +4,24 @@ import "./styles.scss";
 import FullPageSpinner from "../../Components/loader/FullPageSpinner.tsx";
 
 const Home = () => {
-  interface userMap{
-    firstname:string
-     lastname:string
-     image:string
-     phone:string
-     email:string
-     id:number
-     address:{
-      city:string
-      country:string
-      street:string
-      streetName:string
-     }
-     gender:string
-   }
+  interface userMap {
+    firstname: string;
+    lastname: string;
+    image: string;
+    phone: string;
+    email: string;
+    id: number;
+    address: {
+      city: string;
+      country: string;
+      street: string;
+      streetName: string;
+    };
+    gender: string;
+  }
   const [data, setData] = useState<Array<userMap>>([]);
   const [filter, setFilter] = useState("both");
- 
+
   const [ready, setReady] = useState(false);
   const [total, setTotal] = useState("");
   const [no, setNo] = useState<number>(3);
@@ -68,22 +68,24 @@ const Home = () => {
       getData(no);
     } else {
       setReady(false);
-      
-      getDataByGender(no, filter)
-    
-    };
+
+      getDataByGender(no, filter);
+    }
   };
 
   console.log(filter);
   console.log(no);
   const handleSelectChange = (e) => {
     setFilter(e.target.value);
-
+  
     console.log(e.target.value);
     setReady(false);
     setData([]);
-
-    getDataByGender(3, e.target.value);
+    if (e.target.value === "both") {
+      getData(3);
+    } else {
+      getDataByGender(3, e.target.value);
+    }
   };
   useEffect(() => {
     document.body.style.backgroundColor = "#fff";
@@ -94,22 +96,61 @@ const Home = () => {
       <FullPageSpinner show={!ready} />
       <div className="home">
         <div className="home-content">
-          <p className="total">total:<span>{total}</span></p>
-          <select value={filter} onChange={handleSelectChange}>
-            <option value={"male"}>male</option>
-            <option value={"female"}>female</option>
-          </select>
-          {data.map((data) => {
-            
+          <div className="header">
+            <div className="radio-btns-content">
+              <div>
+                <input
+                  onChange={handleSelectChange}
+                  type="radio"
+                  value="female"
+                 
+                  name="gender"
+                />
+                <label htmlFor="">Female</label>
+              </div>
+              <div>
+                <input
+                  onChange={handleSelectChange}
+                  type="radio"
+                  value="male"
+                  name="gender"
+                />
+                <label htmlFor="">Male</label>
+              </div>
+              <div>
+                <input
+                  onChange={handleSelectChange}
+                  type="radio"
+                  value="both"
+                  defaultChecked
+                  name="gender"
+                />
+                <label htmlFor="">Both</label>
+              </div>
+            </div>
+ 
+            <div className="total-content">
+              <button className="total">Total Results:</button>
+              <span>{total}</span>
+            </div>
+          </div>
+          {data&&data.map((data) => {
             return (
               <div className="card" key={data.id}>
-                <img src={`${data.image}`} alt="user"/>
+                <img src={`${data.image}`} alt="user" />
                 <div className="card-content">
+                  <p className="name">{data.firstname + " " + data.lastname}</p>
                   <p>
-                    first Name: <span>{data.firstname}</span>
-                  </p>
-                  <p>
-                    last Name <span>{data.lastname}</span>
+                    address:
+                    <span>
+                      {data.address.city +
+                        " " +
+                        data.address.country +
+                        " " +
+                        data.address.street +
+                        " " +
+                        data.address.streetName}
+                    </span>
                   </p>
                   <p>
                     mobile number : <span>{data.phone}</span>
@@ -120,18 +161,13 @@ const Home = () => {
                   <p>
                     gender : <span>{data.gender}</span>
                   </p>
-                  <div>
-                    <p>
-                      address: <span>{data.address.city +" "+data.address.country+" "+data.address.street+" "+data.address.streetName}</span>
-                    </p>
-                 
-                  </div>
+                  <div></div>
                 </div>
               </div>
             );
           })}
           {data.length > 0 ? (
-            <button onClick={() => handleData(no)}>Loading ...</button>
+            <button onClick={() => handleData(no)}>Loading more</button>
           ) : (
             ""
           )}
